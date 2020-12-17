@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/signup.css" rel="stylesheet">
+	</head>
+	<body background="images/download.jpg">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+          <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+      </ul>
+    
+    </nav>
+  </div>
+</header>
+
+
+</div> 
+ <!--/stories-->
+ <div class="wrapper">
+    <h1>Sign Up Here</h1>
+    <form method="POST" action="/signup/newsignup" onsubmit="return validate()">
+       <input type="text" placeholder="Enter Name" id="name" name="name1">
+        <p id="error1"></p>
+        <input type="text" placeholder="Contact No" id="pn" name="pn" >
+        <p id="error"></p>
+        
+        <input type="text" placeholder="Email" id="email2" name="email2">
+        <span id="msg"></span>
+        <input type="text" placeholder="date [dd/mm/yyyy or dd-mm-yyyy format]" id="date" name="date" >
+        <p id="msg1"></p>
+        <div class="field">
+            
+        <input type="password" placeholder="Password" id="password2" name="password2" onkeyup="trigger()">
+        <span class="hideShowBtn">show</span>
+        <p id="pass"></p>
+        </div>
+        <div class="indicator">
+          <span class="weak"></span>
+          <span class="medium"></span>
+          <span class="strong"></span>
+        </div>
+        <div class="note"></div> 
+        <br>
+        <input type="password" placeholder="Retype Password" id="confirm" name="confirm">
+        <p id=cp></p>
+        
+        <input type="submit" value="Submit">
+    </form>
+  </div>
+          <!--/stories-->
+
+  <!-- script references -->
+<script>
+ let name=document.getElementById("name");
+    let email=document.getElementById("email2");
+    let msg=document.getElementById("msg");
+    let date=document.getElementById("date");
+    let msg1=document.getElementById("msg1");
+    let password=document.getElementById("password2");
+    let pass=document.getElementById("pass");
+    let pn=document.getElementById("pn");
+    let confirm=document.getElementById("confirm");
+    let cp=document.getElementById("cp");
+    const indicator = document.querySelector(".indicator");
+    const weak = document.querySelector(".weak");
+    const medium = document.querySelector(".medium");
+    const strong = document.querySelector(".strong");
+    const note = document.querySelector(".note");
+    const hideShowBtn = document.querySelector(".hideShowBtn");
+    function validate(){
+    if(name.value == "")
+    {
+      error1.innerHTML = "Field cannot be empty";
+      error1.style.color = "red";
+      
+      return false;
+
+    }
+    
+    let phn=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if(phn.test(pn.value)){
+    //  error.innerHTML = "valid";
+    //  error.style.color = "green";
+      pn.style.border ='2px solid green';
+      
+     }
+    else{
+      error.innerHTML = "incorrect format";
+      error.style.color = "red";
+      pn.style.border ='2px solid red';
+    
+      }
+    
+    let exp =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(exp.test(email2.value)){
+      //  msg.innerHTML = "valid emailid";
+      //  msg.style.color = "green";
+        email2.style.border ='2px solid green';
+       }
+    else{
+      msg.innerHTML = "Please enter an valid email";
+      msg.style.color = "red"; 
+      email2.style.border='2px solid red' ;
+      } 
+    let dateexp = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    if(dateexp.test(date.value)){
+     
+     date.style.border = "green";
+     }
+    else{
+     msg1.innerHTML = "invalid format";
+     msg1.style.color = "red";
+     date.style.border="red";
+       
+    }
+    let regexp =  /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    if(regexp.test(password2.value)){
+     
+     password2.style.border = "green";
+     }
+    else{
+     pass.innerHTML = "Password should contain atleast 8 letters including one lowercase,one uppercase letters and one number";
+     pass.style.color = "red";
+     password2.style.border="red";
+       
+    }
+    
+    if (phn.test(pn.value) && exp.test(email2.value) && dateexp.test(date.value) && regexp.test(password.value) && (password2.value == confirm.value))
+    return true;
+    else{
+    cp.innerHTML="please confirm yr password or check all the fields";
+    cp.style.color ="red";
+    
+    return false;
+    }
+  }
+  // strat here
+  let regExpWeak = /[a-z]/;
+let regExpMedium = /\d+/;
+let regExpStrong =  /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+let level = 0;
+
+function trigger(){
+	if(password2.value != ""){
+		indicator.style.display = "block";
+		indicator.style.display = "flex";
+
+		if(password2.value.match(regExpWeak) || 
+       password2.value.match(regExpMedium) || 
+		   password2.value.match(regExpStrong))
+			level =1;
+
+		if( ((password2.value.match(regExpWeak) && password2.value.match(regExpMedium)) || 
+			(password2.value.match(regExpMedium) && password2.value.match(regExpStrong))|| 
+			(password2.value.match(regExpWeak) && password2.value.match(regExpStrong))))
+			level =2;
+
+		if( password2.value.match(regExpWeak) &&
+      password2.value.match(regExpMedium) &&
+			password2.value.match(regExpStrong))
+			level =3;
+
+		if(level ==1){
+			weak.classList.add("active");
+			note.style.display = "block";
+			note.textContent = "Your password is too weak";
+			note.classList.add("weak");
+		}
+
+		if(level ==2){
+			medium.classList.add("active");
+			note.textContent = "Your password is medium";
+			note.classList.add("medium");
+		}else{
+			medium.classList.remove("active");
+			note.classList.remove("medium");
+		}
+
+		if(level ==3){
+			medium.classList.add("active");
+			strong.classList.add("active");
+			note.textContent = "Your password is strong";
+			note.classList.add("strong");
+		}else{
+			strong.classList.remove("active");
+			note.classList.remove("strong");
+		}
+
+		hideShowBtn.style.display = "block";
+		hideShowBtn.onclick = function(){
+			if(password.type == "password"){
+				password.type = 'text';
+				hideShowBtn.textContent = "HIDE";
+			} else {
+				password.type = 'password';
+				hideShowBtn.textContent = "SHOW";
+			}
+		}
+
+	} else {
+		indicator.style.display = "none";
+		note.style.display = "none";
+		hideShowBtn.style.display = "none";
+	}
+}
+    </script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

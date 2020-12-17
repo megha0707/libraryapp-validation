@@ -1,0 +1,178 @@
+/* override bootstrap styles */
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+/* body {
+  padding-top:50px;
+  color:#646464;
+  background-color:#efefef;
+} */
+
+h1,h2,h3,.highlight,.navbar a,#masthead h4 {
+  font-family:'Oswald',arial narrow,sans-serif;
+}
+
+footer {
+
+  margin-top:40px;
+  padding-top:40px;
+  padding-bottom:40px;
+  background-color:#cecece;
+ 
+}
+
+
+#masthead {
+  min-height:199px;
+  background-color:blue;
+  
+}
+
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
+  color:#fefeff;
+  margin-top:50px;
+}
+
+
+#topPanel {
+  padding-top:0px;
+  padding-left:22px;
+  padding-right:22px;
+}
+#topPanel .panel-body {
+  padding-top:0px;
+ 
+}
+
+.navbar.affix {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+
+
+a,a:hover {
+  color:#223344;
+  text-decoration:none;
+}
+
+.icon-bar {
+  background-color:#fff;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 80px;
+  }
+}
+
+.navbar-bright {
+  background-color:#330033;
+  color:#fff;
+  margin-bottom: 0;
+  border-width: 0;
+}
+
+.navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
+  color:#ccccdd;
+  font-size:14px;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+}
+
+.navbar-bright li > a:hover {
+  background-color:#000044;
+}
+
+.dropdown-menu {
+  min-width: 250px;
+  
+}
+
+
+
+.wrapper{
+    width: 400px;
+    height: 400px;
+    color:  #000; 
+    top:  50%;
+    left: 50%;
+    padding: 60px 30px;
+    position: absolute;
+    transform:translate(-50%,-50%);
+     box-sizing: border-box; 
+     box-shadow: 8px 8px 50px #000;  
+} 
+
+body{
+  margin: 0;
+  padding: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-family : Poppins;
+  background-attachment: fixed;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    margin-bottom:8%;
+    font-family:Courgette;
+
+}
+.wrapper input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wrapper input[type=text] , .wrapper input[type=password] {
+    
+    border-style: solid; 
+    
+    /* background : transparent; */
+    
+    height: 30px;
+    font-size:16px;
+    opacity:1;
+}
+.wrapper input [type=submit]{
+    /* border: none;
+    outline: none; */
+    height: 40px;
+    background: #f6648b;
+    color:black;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wrapper input [type=submit] :hover{
+    cursor:pointer;
+}
+.wrapper a{
+    font-size: 14px;
+    text-decoration: none;
+     color:#000; 
+    opacity: 0.8;
+}
+.wrapper a:hover{
+    color: #000; 
+    opacity: 1;
+}
+.bottom-text{
+    color: #000; 
+}
+.bottom-text input{
+    width: 10%;
+    float: left;
+}
+.bottom-text a{
+    float: right;
+} 

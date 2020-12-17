@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/book.css" rel="stylesheet">
+	</head>
+	<body background="images/download.jpg">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/books" class="navbar-brand">Home</a>
+      <a href="/addbook" class="navbar-brand"> Add Books</a>
+      <a href="/authors" class="navbar-brand">Authors</a>
+      <a href="/" class="navbar-brand">Logout</a>
+    </div>
+   
+  
+
+
+          
+          <!--/stories-->
+          <div class="wrapper">
+            
+            <h1>Add New Book</h1>
+            <form method="POST"  action="/addbook/add"  onsubmit="return validate()">
+              <label for="title">Title</label><br>
+              <input type="text" id="title"  value="" name="title" required><br>
+              <label for="author">Author</label><br>
+              <input type="text" id="author"  value="" name="author" required><br>
+              <label for="genre">Genre</label><br>
+              <input type="text" id="genre"  value="" name= "genre" required><br>
+              <input type="file" id="myFile" name="image" accept="image/*" required>
+              <input type="submit" value="Submit">
+            </form>
+            
+          </div>
+          
+          <!--/stories-->
+          
+         
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+    <script>
+      function validate(){
+      let title=document.getElementById("title");
+      let author=document.getElementById("author");
+      let genre=document.getElementById("genre");
+      
+ if(title.value==""){
+ return false;
+ } 
+ if(author.value==""){
+ return false;
+ } 
+ if(genre.value==""){
+ return false;
+ }
+ else{
+ return true;
+ }  }  
+    </script>                                            
+                                                                                
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

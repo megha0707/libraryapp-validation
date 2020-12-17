@@ -1,0 +1,127 @@
+/* override bootstrap styles */
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+
+
+
+h1,h2,h3,.highlight,.navbar a,#masthead h4 {
+  font-family:'Oswald',arial narrow,sans-serif;
+}
+
+
+
+
+
+
+
+
+.navbar.affix {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+
+
+a,a:hover {
+  color:#223344;
+  text-decoration:none;
+}
+
+
+
+.navbar-bright {
+  background-color:#330033;
+  color:#fff;
+  margin-bottom: 0;
+  border-width: 0;
+}
+
+.navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
+  color:#ccccdd;
+  font-size:14px;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+}
+
+.navbar-bright li > a:hover {
+  background-color:#000044;
+}
+
+
+
+.wrapper{
+    width: 400px;
+    height: 420px;
+    color:  #000; 
+    top:  550%;
+    left: 50%;
+    padding: 60px 30px;
+    position: absolute;
+    transform:translate(-50%,-50%);
+     box-sizing: border-box; 
+     box-shadow: 8px 8px 50px #000;  
+} 
+
+
+
+h1{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    margin-bottom:8%;
+    font-family:Courgette;
+
+}
+.wrapper input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wrapper input[type=text]  {
+
+    border-style: solid; 
+    /* border-bottom: 1px solid brown;  */
+    background : transparent;
+     /* outline:beige;   */
+    height: 30px;
+    font-size:16px;
+    opacity:1;
+}
+.wrapper input [type=submit]{
+    /* border: none;
+    outline: none; */
+    height: 40px;
+    background: #f6648b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wrapper input [type=submit] :hover{
+    cursor:pointer;
+}
+.wrapper a{
+    font-size: 14px;
+    text-decoration: none;
+     color:#000; 
+    opacity: 0.8;
+}
+.wrapper a:hover{
+    color: #000; 
+    opacity: 1;
+}
+body{
+  /* margin: 0;
+  padding: 0; */
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-family : Poppins;
+  background-attachment: fixed;
+}
+
